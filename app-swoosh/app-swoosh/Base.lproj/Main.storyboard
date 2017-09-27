@@ -46,8 +46,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-D7-QKw" customClass="BorderBtn" customModule="app_swoosh" customModuleProvider="target">
-                                <rect key="frame" x="130" y="479" width="115" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-D7-QKw" customClass="BorderBtn" customModule="app_swoosh" customModuleProvider="target">
+                                <rect key="frame" x="88" y="463" width="235" height="56"/>
                                 <color key="backgroundColor" red="0.090969877383302547" green="0.12206946562994558" blue="0.099202503507319517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="R8f-UC-s8j"/>
@@ -55,6 +55,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Get started"/>
+                                <connections>
+                                    <segue destination="W4e-eT-enL" kind="show" identifier="secondScreen" id="ay6-Xy-K90"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,6 +90,9 @@
                             <constraint firstItem="3bZ-e8-kKE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="z9E-IO-osH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getStartedBtn" destination="G3q-D7-QKw" id="nGv-ut-jfn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,11 +180,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Next"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubZ-3z-TnV">
+                                <rect key="frame" x="1" y="9" width="83" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="83M-Xj-S4G"/>
+                                    <constraint firstAttribute="width" constant="83" id="nTA-PE-S4N"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="8Rh-ME-peI" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="vxA-ic-67a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="brj-Wa-0Uk" firstAttribute="top" secondItem="Skk-Ub-Sc4" secondAttribute="bottom" constant="105" id="0Wd-2S-IYt"/>
                             <constraint firstAttribute="trailing" secondItem="Skk-Ub-Sc4" secondAttribute="trailing" id="0c8-UP-e6E"/>
+                            <constraint firstItem="ubZ-3z-TnV" firstAttribute="leading" secondItem="rjy-UO-7g6" secondAttribute="leading" id="1Oi-ya-heK"/>
                             <constraint firstAttribute="trailing" secondItem="brj-Wa-0Uk" secondAttribute="trailing" id="D3Q-RF-iZa"/>
                             <constraint firstItem="Skk-Ub-Sc4" firstAttribute="leading" secondItem="rjy-UO-7g6" secondAttribute="leadingMargin" id="D5G-gG-cqP"/>
                             <constraint firstItem="Qu8-ch-RFI" firstAttribute="leading" secondItem="rjy-UO-7g6" secondAttribute="leading" id="ENL-3j-HPd"/>
@@ -200,8 +218,9 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UT-fI-cvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8Rh-ME-peI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="832.79999999999995" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1190" y="143"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uPg-tM-FGf">
@@ -285,10 +304,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVy-UF-gjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560.8" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1879" y="143"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
